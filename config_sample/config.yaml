@@ -1,0 +1,40 @@
+---
+name: Sample Addon
+version: "0.1.20"
+slug: snapcast_client_automatic
+description: Showcases the configuration UI for addons.
+url: https://github.com/cr7pt0gr4ph7/homeassistant-addons-sample/
+startup: services
+boot: auto
+init: false
+audio: true
+options:
+  logins:
+    - username: user1
+      password: MySecretPassword
+    - username: user2
+      password: abc123
+      password_pre_hashed: true
+  customize:
+    active: false
+    folder: mosquitto
+  filters: []
+schema:
+  logins:
+    - username: str
+      password: password
+      password_pre_hashed: "bool?"
+  customize:
+    active: bool
+    folder: str
+  filters:
+    - conditions:
+        - str?
+      accept: bool?
+      latency: int?
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386

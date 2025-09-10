@@ -1,0 +1,32 @@
+configuration:
+  logins:
+    name: Logins
+    description: >-
+      A list of local users that will be created with username and password.
+      You don't need to do this because you can use Home Assistant users too,
+      without any configuration. You can also specify
+      `password_pre_hashed: true` to utilize a pre-hashed password from the
+      output of the `pw` command (which is present inside the container).
+    fields:
+      username:
+        name: Username
+      password:
+        name: Password
+      password_pre_hashed:
+        name: Password is pre-hashed
+        description: >-
+          Set to true if the given password data was pre-hashed using the `pw`` command
+          (which is present inside the Mosquitto container).
+  customize:
+    name: Customize
+    description: >-
+      See the Documentation tab for more information about these options.
+    fields:
+      active:
+        name: Enable customization
+        description: >-
+          If set to `true`` additional configuration files will be read, see the next option.
+      folder:
+        name: Folder
+        description: >-
+          The folder to read the additional configuration files (*.conf) from.
